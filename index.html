@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neokingdom DAO</title>
+    <title>neokingdom DAO</title>
     <style>
       html {
         font-size: 16px;
@@ -12,66 +12,162 @@
 
       body {
         color: #eee;
-        background-color: #111;
+        background-color: #222;
+        font-family: monospace;
+      }
+
+      a,
+      a:visited {
+        color: inherit;
       }
 
       pre {
-        max-width: 80%;
+        width: 80%;
+        max-width: 1024px;
         margin: 0 auto 4rem;
-        font-size: calc(100vw / 86);
+        font-size: clamp(0.2rem, calc(100vw / 140), 1rem);
+        text-align: center;
       }
 
       section {
         max-width: 800px;
         margin: 0 auto;
       }
+
+      p {
+        line-height: 1.5;
+      }
+
+      p:last-child {
+        margin-bottom: 4rem;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
     </style>
   </head>
   <body>
     <pre>
-     ##### #     ##                       /                                       ##                             
-  ######  /#    #### /                  #/         #                               ##                            
- /#   /  / ##    ###/                   ##        ###                              ##                            
-/    /  /  ##    # #                    ##         #                               ##                            
-    /  /    ##   #                      ##                                         ##                            
-   ## ##    ##   #    /##       /###    ##  /##  ###   ###  /###     /###      ### ##    /###   ### /### /###    
-   ## ##     ##  #   / ###     / ###  / ## / ###  ###   ###/ #### / /  ###  / ######### / ###  / ##/ ###/ /##  / 
-   ## ##     ##  #  /   ###   /   ###/  ##/   /    ##    ##   ###/ /    ###/ ##   #### /   ###/   ##  ###/ ###/  
-   ## ##      ## # ##    ### ##    ##   ##   /     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
-   ## ##      ## # ########  ##    ##   ##  /      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
-   #  ##       ### #######   ##    ##   ## ##      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
-      /        ### ##        ##    ##   ######     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
-  /##/          ## ####    / ##    ##   ##  ###    ##    ##    ## ##     ##  ##    /# ##    ##    ##   ##   ##   
- /  #####           ######/   ######    ##   ### / ### / ###   ### ########   ####/    ######     ###  ###  ###  
-/     ##             #####     ####      ##   ##/   ##/   ###   ###  ### ###   ###      ####       ###  ###  ### 
-#                                                                         ###                                    
- ##                                                                 ####   ###                                   
-                                                                  /######  /#                                    
-                                                                 /     ###/                                      
+                                  /                                       ##                             
+                                #/         #                               ##                            
+                                ##        ###                              ##                            
+                                ##         #                               ##                            
+                                ##                                         ##                            
+###  /###     /##       /###    ##  /##  ###   ###  /###     /###      ### ##    /###   ### /### /###    
+ ###/ #### / / ###     / ###  / ## / ###  ###   ###/ #### / /  ###  / ######### / ###  / ##/ ###/ /##  / 
+  ##   ###/ /   ###   /   ###/  ##/   /    ##    ##   ###/ /    ###/ ##   #### /   ###/   ##  ###/ ###/  
+  ##    ## ##    ### ##    ##   ##   /     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
+  ##    ## ########  ##    ##   ##  /      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
+  ##    ## #######   ##    ##   ## ##      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
+  ##    ## ##        ##    ##   ######     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##   
+  ##    ## ####    / ##    ##   ##  ###    ##    ##    ## ##     ##  ##    /# ##    ##    ##   ##   ##   
+  ###   ### ######/   ######    ##   ### / ### / ###   ### ########   ####/    ######     ###  ###  ###  
+   ###   ### #####     ####      ##   ##/   ##/   ###   ###  ### ###   ###      ####       ###  ###  ### 
+                                                                  ###                                    
+                                                            ####   ###                                   
+                                                          /######  /#                                    
+                                                         /     ###/                                      
 
-
-
-                                          ##### ##         ##          # ###   
-                                       /#####  /##      /####        /  /###   
-                                     //    /  / ###    /  ###       /  /  ###  
-                                    /     /  /   ###      /##      /  ##   ### 
-                                         /  /     ###    /  ##    /  ###    ###
-                                        ## ##      ##    /  ##   ##   ##     ##
-                                        ## ##      ##   /    ##  ##   ##     ##
-                                        ## ##      ##   /    ##  ##   ##     ##
-                                        ## ##      ##  /      ## ##   ##     ##
-                                        ## ##      ##  /######## ##   ##     ##
-                                        #  ##      ## /        ## ##  ##     ##
-                                           /       /  #        ##  ## #      / 
-                                      /###/       /  /####      ##  ###     /  
-                                     /   ########/  /   ####    ## / ######/   
-                                    /       ####   /     ##      #/    ###     
-                                    #              #                           
-                                     ##             ##                         
+      ##### ##         ##          # ###   
+   /#####  /##      /####        /  /###   
+ //    /  / ###    /  ###       /  /  ###  
+/     /  /   ###      /##      /  ##   ### 
+     /  /     ###    /  ##    /  ###    ###
+    ## ##      ##    /  ##   ##   ##     ##
+    ## ##      ##   /    ##  ##   ##     ##
+    ## ##      ##   /    ##  ##   ##     ##
+    ## ##      ##  /      ## ##   ##     ##
+    ## ##      ##  /######## ##   ##     ##
+    #  ##      ## /        ## ##  ##     ##
+       /       /  #        ##  ## #      / 
+  /###/       /  /####      ##  ###     /  
+ /   ########/  /   ####    ## / ######/   
+/       ####   /     ##      #/    ###     
+#              #                           
+ ##             ##                         
     </pre>
 
     <section>
-      <p><strong>Neokingdom DAO</strong> is a framework to build legal DAOs.</p>
+      <h2>Definition</h2>
+      <p>
+        <em>Neokingdoms</em> are EVM based, legally compliant DAOs which rely on
+        a legal model crafted by
+        <a href="https://www.oblicity.com">Oblicity</a>, an Estonian law firm
+        using the favorable Estonian legal system.
+      </p>
+      <p>
+        ODOO, an open source ERP (Enterprise Resource Planning System) is used
+        as the digital backbone to be able to run and administer a full-fledged
+        organization or brick-and-mortar businesses for real-world uses cases.
+      </p>
+      <p>Users vote and interact with the DAO using a progressive web app.</p>
+      <p>
+        <em>
+          The core principle is that contributors of the DAO can invest by
+          personal time-based effort or monetary contributions to receive shares
+          in the organisation that represent ownership, voting and dividend
+          rights.
+        </em>
+      </p>
+    </section>
+    <section>
+      <h2>Mission Statement</h2>
+      <p>
+        <em>Neokingdoms</em> are constitutional DAOcracies. They serve a
+        collective of humans with a common goal. Fairness, decision making, and
+        rewarding of those who create value are technology based and happen in
+        the virtual realm. The purpose is to create a better existence for
+        everyone on earth.
+      </p>
+    </section>
+
+    <section>
+      <h2>How</h2>
+      <p>
+        We are building <em>neokingdom DAO</em> for real world use cases. To
+        find the right balance between idealism and pragmatism, we decided to
+        test the system ourselves while we are developing it—some people call
+        this approach <em>dogfooding</em>, some others call it
+        <em>having skin in the game</em>.
+      </p>
+      <p>
+        That's why on July 27th, 2022 we transformed our company,
+        <a href="https://www.teledisko.com/">teledisko&nbsp;GmbH</a> into the
+        first <em>neokingdom</em>. This means that the decisional process of the
+        company happens
+        <a href="https://dao.teledisko.com/#/resolutions">on–chain</a>,
+        contributors are rewarded
+        <a
+          href="https://evm.evmos.org/address/0x64Fd2411C9b6c0d2F6F70dAA77Bac63E93D6AB2B/transactions"
+          >Teledisko Tokens</a
+        >, and many other things that you can find in our
+        <a href="https://github.com/TelediskoDAO/legal/">legal documentation</a
+        >.
+      </p>
+      <p>
+        We are using the system we built to test our assumptions, and we are
+        actively evolving the legal and technical framework to adapt it to the
+        challenges we are facing. Once we are ready we will make our framework,
+        <em>neokingdom</em>, available to everyone.
+      </p>
+    </section>
+
+    <section>
+      <h2>Active Neokingdoms</h2>
+      <p>
+        <strong>teledisko DAO OÜ</strong> was launched on July 27h 2022,
+        transforming the popular
+        <a href="https://www.teledisko.com/">Teledisko&nbsp;GmbH</a> into the
+        first <em>neokingdom</em>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stay in touch</h2>
+      <p>?</p>
     </section>
   </body>
 </html>
