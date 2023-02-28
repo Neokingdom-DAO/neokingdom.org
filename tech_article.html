@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neokingdom DAO</title>
+    <style>
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        color: #eee;
+        background-color: #222;
+        font-family: monospace;
+      }
+
+      a,
+      a:visited {
+        color: inherit;
+      }
+
+      header {
+        margin-top: 2rem;
+      }
+
+      header h1 {
+        visibility: hidden;
+      }
+
+      /* Thanks: https://animated-gradient-background-generator.netlify.app/ */
+      pre {
+        width: 80%;
+        max-width: 1024px;
+        margin: 0 auto 4rem;
+        font-size: min(calc(100vw / 120), 0.6rem);
+        text-align: center;
+        background: linear-gradient(
+          123deg,
+          #ffd448,
+          #777d7e,
+          #9a68fd,
+          #fb1351,
+          #30ff1e,
+          #ee7917
+        );
+        background-size: 360% 360%;
+        animation: gradient-animation 10s ease infinite;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        line-height: 0.8;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      section {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      p:last-child {
+        margin-bottom: 4rem;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>neokingdom DAO</h1>
+      <pre aria-hidden="true">
+                                                                                                                                                        
+                                  /                                       ##                                      ##### ##         ##          # ###    
+                                #/         #                               ##                                  /#####  /##      /####        /  /###    
+                                ##        ###                              ##                                //    /  / ###    /  ###       /  /  ###   
+                                ##         #                               ##                               /     /  /   ###      /##      /  ##   ###  
+                                ##                                         ##                                    /  /     ###    /  ##    /  ###    ### 
+###  /###     /##       /###    ##  /##  ###   ###  /###     /###      ### ##    /###   ### /### /###           ## ##      ##    /  ##   ##   ##     ## 
+ ###/ #### / / ###     / ###  / ## / ###  ###   ###/ #### / /  ###  / ######### / ###  / ##/ ###/ /##  /        ## ##      ##   /    ##  ##   ##     ## 
+  ##   ###/ /   ###   /   ###/  ##/   /    ##    ##   ###/ /    ###/ ##   #### /   ###/   ##  ###/ ###/         ## ##      ##   /    ##  ##   ##     ## 
+  ##    ## ##    ### ##    ##   ##   /     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##          ## ##      ##  /      ## ##   ##     ## 
+  ##    ## ########  ##    ##   ##  /      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##          ## ##      ##  /######## ##   ##     ## 
+  ##    ## #######   ##    ##   ## ##      ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##          #  ##      ## /        ## ##  ##     ## 
+  ##    ## ##        ##    ##   ######     ##    ##    ## ##     ##  ##    ## ##    ##    ##   ##   ##             /       /  #        ##  ## #      /  
+  ##    ## ####    / ##    ##   ##  ###    ##    ##    ## ##     ##  ##    /# ##    ##    ##   ##   ##        /###/       /  /####      ##  ###     /   
+  ###   ### ######/   ######    ##   ### / ### / ###   ### ########   ####/    ######     ###  ###  ###      /   ########/  /   ####    ## / ######/    
+   ###   ### #####     ####      ##   ##/   ##/   ###   ###  ### ###   ###      ####       ###  ###  ###    /       ####   /     ##      #/    ###      
+                                                                  ###                                       #              #                            
+                                                            ####   ###                                       ##             ##                          
+                                                          /######  /#                                                                                   
+                                                         /     ###/                                                                                     
+</pre
+      >
+    </header>
+
+    <section>
+      <h1 id="technical-journey-into-the-neokingdom-dao">
+        Technical journey into the Neokingdom DAO
+      </h1>
+      <h2 id="introduction">Introduction</h2>
+      <p>
+        Neokingdom DAO is relatively new but very ambitious experiment whose
+        inceptions dates back to 2016.
+      </p>
+      <p>
+        The basic idea is to provide the legal and technical framework to create
+        DAOcracies, namely companies running with the same founding principles
+        of a DAO.
+      </p>
+      <p>In a nutshell:</p>
+      <ul>
+        <li>Contributors invest their time and earn tokens</li>
+        <li>
+          Tokens can be used to get dividends and vote on the DAO&#39;s
+          Resolutions
+        </li>
+        <li>
+          Tokens can also be sold internally or pledged to the DAO, at the
+          nominal value of 1 EURO (yep, people need to pay the rent)
+        </li>
+        <li>
+          Everything is regulated through <em>resolutions</em>, from the hiring
+          of a new contributor, to the dissolution of the company
+        </li>
+        <li>
+          People can also just invest capital, get tokens and earn dividends,
+          without having votings rights
+        </li>
+      </ul>
+      <p>
+        All this in a legally compliant way. Meaning that the founders can turn
+        any type of company into a DAO (not only crypto projects) and that
+        freelancer can earn be part of them without legal concerns.
+      </p>
+      <p>
+        It&#39;s a new way of shaping the relationship between a company and its
+        contributors. A way aimed at building a symbiosis between people and
+        commercial entities.
+      </p>
+      <h2 id="coding-the-law">Coding the Law</h2>
+      <p>
+        Creating the groundwork to bring the first Neokingdom DAO to life
+        (Teledisko DAO) required an initial effort that has been purely legal.
+      </p>
+      <p>
+        Since its inception, more than a year has been spent by the team to get
+        the legal foundation that could guarantee the lawfulness of our
+        initiative. It will take time for our DAO framework to merge perfectly
+        with the Estonian legal framework. But given how closely we worked with
+        the Estonian government, we are confident that any upcoming issue will
+        be addressable without legal troubles.
+      </p>
+      <p>
+        Once the first draft of the
+        <a href="https://github.com/TelediskoDAO/legal/blob/main/AoA.md"
+          >Article of Association</a
+        >
+        and the
+        <a href="https://github.com/TelediskoDAO/legal/blob/main/SHA.md"
+          >Shareholders&#39; Agreement (SHA)</a
+        >
+        has been completed, we started developing the Smart Contracts and the
+        dApp on top.
+      </p>
+      <p>
+        The main challenge for the development of this first implementation of
+        the DAO has been the connection between law and code.
+      </p>
+      <p>
+        When we needed to start developing the Smart Contracts, we actually
+        decided to spend the first weeks thoroughly studying the Article of
+        Association and the Shareholder Agreement. The main point was to get to
+        a very clear understanding of how the law could be automated with code,
+        and this required quite a few iterations with the lawyers.
+      </p>
+      <h2 id="general-architecture">General Architecture</h2>
+      <p>The system architecture has 4 layers:</p>
+      <ol>
+        <li>
+          Legal: Article of Association and Shareholder Agreement. This is the
+          layer connecting metaverse to universe, code to law. Everything that
+          has been implemented, used this layer as a list of requirements.
+        </li>
+        <li>
+          Smart Contracts: this is the code implementing the law, running on
+          EVMOS.
+        </li>
+        <li>
+          Content Delivery: we use The Graph to collect and structure our
+          on-chain information, for easy and expedite access.
+        </li>
+        <li>
+          Clients:
+          <ol>
+            <li>
+              Mailer: a cloudfront worker sending out emails to the relevant DAO
+              participant about legally sensitive events
+            </li>
+            <li>
+              Dapp: this is the access point for the Contributors of the DAO and
+              the general public, willing to look at its development
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/TelediskoDAO/docs/main/architecture.png"
+          alt="Architecture"
+        />
+      </p>
+      <h2 id="shares-and-permissions">Shares and Permissions</h2>
+      <p>
+        Point <code>2.</code> of the SHA describes in aboundant detail the
+        process of joining the DAO as Shareholder and as a Contributor. What
+        ultimately discriminates a DAO Shareholder from any other person is
+        described in point <code>2.1.3</code>
+      </p>
+      <blockquote>
+        <p>
+          <code
+            >Upon accepting a person as a new shareholder of DAO, DAO shall
+            insert the person into the shareholders&#39; register and gift or
+            sell such person 1 DAO share with the nominal value of EUR 1;</code
+          >
+        </p>
+      </blockquote>
+      <p>
+        The possession of this nominal share is what ultimately defines the
+        rights of the Shareholder with respect to the DAO: voting rights,
+        dividend rights, etc.
+      </p>
+      <p>
+        The logic is implemented by the
+        <a
+          href="https://github.com/TelediskoDAO/contracts/tree/main/contracts/ShareholderRegistry"
+          ><code>ShareholderRegistry</code></a
+        >, which is the single point of truth when it comes to the DAOs
+        permission management.
+      </p>
+      <p>
+        Shares are managed by an ERC20 contract, extended to comply with the
+        points of the Shareholder Agreements. For instance:
+      </p>
+      <ul>
+        <li>every address is allowed to own max 1 share</li>
+        <li>
+          shares can only be transferred after a DAO vote (which implies that
+          only an automatically executed resolution can trigger
+          <code>transferFrom</code>)
+        </li>
+      </ul>
+      <p>
+        The ownership of a share is the pre-condition to be have any of the
+        statuses available to the DAO
+      </p>
+      <ul>
+        <li>Investor</li>
+        <li>Sharholed</li>
+        <li>Contributor</li>
+        <li>Managing Board</li>
+      </ul>
+      <p>
+        The contract also provides some utility methods that the other contracts
+        can use to, for instance, undestand whether an account can vote.
+      </p>
+      <p>
+        The usage of tokens to deal with the shares was not explicitely required
+        by the legal documentation. It was a technical decision that allowed us
+        to more easily implement the logic by re-using existing compoents. It
+        also allowed the implementation of the Smart Contract to match more
+        closely the specific words of the SHA.
+      </p>
+      <h2 id="tokenomics">Tokenomics</h2>
+      <p>
+        The tokenomics of this DAO is probably what distinguish it from most of
+        the existing ones. As its founder said,
+      </p>
+      <blockquote>
+        <p>The system is socialist on the inside, capitalist on the outside.</p>
+      </blockquote>
+      <p>
+        The way tokens are managed inside the DAO makes sure no speculative or
+        profit-maximising behaviour is incentivized.
+      </p>
+      <p>
+        On the other side, once the tokens &quot;leave the DAO&quot;, they
+        become free to be traded as widly and heartlessly as it gets.
+      </p>
+      <p>
+        Chapters <code>4.</code> and <code>10.</code> of the SHA provide all the
+        necessary information about what the tokens of teledisko represent and
+        how they should be regulated.
+      </p>
+      <p>
+        The logic has been implemented with the
+        <a
+          href="https://github.com/TelediskoDAO/contracts/tree/main/contracts/TelediskoToken"
+          ><code>TelediskoToken</code></a
+        >. This is a beefed-up ERC20 Smart Contract.
+      </p>
+      <p>
+        &quot;Beefed-up&quot; in the sense that we needed to implement different
+        levels of &quot;freedom&quot; for the tokens (remember when we were
+        talking aobut &quot;socialistic on the inside, capitalistic on the
+        inside&quot;?).
+      </p>
+      <p>
+        All tokens that are not owned by Contributors (information available in
+        the <code>ShareholderRegistry</code>) are free to move.
+      </p>
+      <p>
+        For the others, we implemented a basic order book functionality within
+        the token itself:
+      </p>
+      <ul>
+        <li>
+          Contributors are able to offer their tokens to other contributor.
+        </li>
+        <li>Other contributors are able to receive offered tokens.</li>
+        <li>Tokens are locked until 7 days after the first offer.</li>
+      </ul>
+      <p>All of this easily visualizable (and doable) from our Dapp</p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/tokens_page.png"
+          alt="Token Page"
+        />
+      </p>
+      <p>
+        Currently, the acceptance of the offer and the transfer of the monetary
+        amount to the token-holder is done more or less manually (a multisig
+        wallet changes the state contract, Euros are transferred via bank-wire).
+        But we are working to integrate EEUR in our ecosystem and have a fully
+        automated escrow mechanism inside the Smart Contracts.
+      </p>
+      <p>
+        We used ERC20 even in this case, because (on top of the same reasons
+        expressed for the ShareholderRegistry), the legal documents explicitly
+        talk mention <code>tokens</code> as the legal tender of the DAO.
+      </p>
+      <h2 id="governance-and-snapshotting">Governance and Snapshotting</h2>
+      <p>
+        The governance of the DAO is regulated throughout the whole SHA and AoA,
+        with legal obligations related to the proposal and execution of the
+        resolutions.
+      </p>
+      <p>
+        Among the many points that we implemented in the DAO, one of them had a
+        quite pervasive implication in the architecture of the Smart Contracts,
+        namely <code>7.4</code> of the SHA:
+      </p>
+      <blockquote>
+        <p>
+          <code
+            >The number of tokens being taken into account for a DAO vote and
+            their allocation between Shareholders will be fixed on a day the DAO
+            vote is announced. Subsequent transactions with tokens are not taken
+            into account.</code
+          >
+        </p>
+      </blockquote>
+      <p>
+        In simple words: the voting power of each Contributor of the DAO depends
+        on the time the resolution has been created. So if A had 42 tokens on
+        22nd September 2022, the Draft Resolution #9 is approved on 23nd
+        September 2022 and A transfers 3 tokens afterward, A will still have a
+        voting power of 42 for Resolution #9.
+      </p>
+      <p>
+        Same applies for delegation, demotion (when a Contributor is removed
+        from the DAO), etc. Namely: if A delegated B on 22nd September 2022, the
+        Draft Resolution #9 is approved on 23nd September 2022 and A redelegates
+        C afterward, B will still be delegated for Resolution #9.
+      </p>
+      <p>
+        Basically most of the state of the DAO had to be <em>snapshottable</em>,
+        with snapshots taken every time a draft resolution is approved by the
+        managing board.
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/meme.png"
+          alt="Unnecessary but street-credits worth meme"
+        />
+      </p>
+      <p>
+        The base logic is implemented in
+        <a
+          href="https://github.com/TelediskoDAO/contracts/blob/main/contracts/extensions/Snapshottable.sol"
+          ><code>Snapshottable</code></a
+        >, that is inherited by all the contracts of the DAO.
+      </p>
+      <p>
+        Each contract has then, for each relevant state-reading function, a
+        default version and an <code>at</code> version. For instance,
+        TelediskoToken has <code>balanceOf</code> and <code>balanceOfAt</code>,
+        the former used to know the balance of an address for a given resolution
+        id.
+      </p>
+      <p>
+        The logic was inspired by the
+        <a
+          href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/ERC20Snapshot.sol"
+          >OpenZeppelin <code>ERC20Snapshot</code> contract</a
+        >, extended to support our state versionining requirements.
+      </p>
+      <h2 id="content-delivery-the-graph">Content Delivery: The Graph</h2>
+      <p>The state of our DAO is tracked by two main entities:</p>
+      <ul>
+        <li>
+          IPFS: for the more verbose type of content, such as the resolution
+          texts
+        </li>
+        <li>Smart Contracts: for everything else</li>
+      </ul>
+      <p>
+        As some of you probably already know, Smart Contracts are not the best
+        &quot;content delivery&quot; service that a dapp could possibly have.
+      </p>
+      <p>
+        For simple dapps, maybe it&#39;s sufficient to interact directly with
+        the Smart Contract (for instance if we only need to display the current
+        balance of ERC20 token holder), but for more complex use cases, there is
+        a complication: the query interface. A Smart Contract is not a DB engine
+        and has such, it offers very limited data access capabilities. The
+        developer has to know ahead of time all the needed access patterns in
+        order to provide functions able to serve that. Imagine having to join
+        multiple data sets or aggregate/filter a long list of data points: would
+        you really like to implement this logic in the Smart Contract?
+      </p>
+      <p>
+        To address this issue, we decided to leverage
+        <a href="https://thegraph.com/en/">The Graph</a>,
+        <em
+          >an indexing protocol for querying networks like Ethereum and
+          IPFS.</em
+        >
+      </p>
+      <p>
+        What The Graph does is to listen to all events coming from a specific
+        Smart Contract and collect its data in a structured format, ready to be
+        queried via GraphQL. The indexing logic can be customized at will.
+      </p>
+      <p>
+        If the Smart Contract events refer to immutable data (such as anything
+        hosted on IPFS), it&#39;s also possible to include that inside the data
+        model.
+      </p>
+      <p>
+        It&#39;s pretty handy as it allows a certain degree of freedom in the
+        creation of the dapp and any other read-only functionality related to
+        the DAO.
+      </p>
+      <p>
+        For querying, it&#39;s possible to use the so-called
+        <strong>Graph Studio</strong>, which is the decentralized network of
+        indexers and curators that offers its data delivery service for a small
+        fee (to be paid in GRT, Graph Token).
+      </p>
+      <p>
+        Given that EVMOS is currently not supported though, we had to spin-up
+        our own indexer and IPFS node. We hope it&#39;s only a temporary
+        solution.
+      </p>
+      <p>
+        Our data model and indexing logic is implemented in
+        <a href="https://github.com/TelediskoDAO/subgraph">its own repository</a
+        >.
+      </p>
+      <p>One example:</p>
+      <pre><code><span class="hljs-function">export function <span class="hljs-title">handleResolutionRejected</span>(<span class="hljs-params"><span class="hljs-keyword">event</span>: ResolutionRejected</span>): <span class="hljs-keyword">void</span> </span>{
+  <span class="hljs-keyword">const</span> resolutionIdStringified = <span class="hljs-keyword">event</span>.<span class="hljs-keyword">params</span>.resolutionId.toString();
+  <span class="hljs-keyword">const</span> resolutionEntity = Resolution.load(resolutionIdStringified);
+
+  <span class="hljs-keyword">if</span> (resolutionEntity) {
+    resolutionEntity.rejectTimestamp = <span class="hljs-keyword">event</span>.block.timestamp;
+    resolutionEntity.rejectBy = <span class="hljs-keyword">event</span>.transaction.<span class="hljs-keyword">from</span>;
+
+    resolutionEntity.save();
+    <span class="hljs-keyword">return</span>;
+  }
+
+  log.error(<span class="hljs-string">"Trying to reject non-existing resolution {}"</span>, [
+    resolutionIdStringified,
+  ]);
+}
+</code></pre>
+      <p>
+        This code snippet is what makes sure that each rejected resolution is
+        marked as such inside our data-model, allowing us to show it in our
+        dapp:
+      </p>
+      <p>
+        <img
+          src="https://raw.githubusercontent.com/TelediskoDAO/docs/tech-article/rejected.png"
+          alt="Rejected Resolutions"
+        />
+      </p>
+      <p>
+        If you need help setting up your graph node with IPFS for your EVMOS
+        project, feel free to get in touch with us!
+      </p>
+      <h2 id="upgradeability">Upgradeability</h2>
+      <p>
+        Teledisko DAO is the first experiment of what will hopefully be a series
+        of transitions. We are positive that the work we have done is
+        meticulous, both on the legal and technical level.
+      </p>
+      <p>
+        It is realistic to assume, though, that given the novelty of our
+        approach to work, some knots might emerge on the way. In order to be
+        able to untie them, we need the flexibility to perform maintenance
+        operations on our contract, both to fix potential security issues and
+        also in case the law beneath should change.
+      </p>
+      <p>
+        For this reason, we deployed all the smart contracts behind proxies. The
+        proxy update pattern allows us to have a configuration like this
+        (diagram sourced from
+        <a href="https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies"
+          >the official OpenZeppelin documentation</a
+        >)
+      </p>
+      <p>
+        User ---- tx ---&gt; Proxy ----------&gt; Implementation_v0 |
+        ------------&gt; Implementation_v1 | ------------&gt; Implementation_v2
+      </p>
+      <p>
+        Each of our smart contracts is actually a proxy that points to the
+        current implementation. Should a bug fix be needed, we can just deploy a
+        new implementation and point the proxy to it.
+      </p>
+      <p>
+        This configuration comes pretty much out of the box
+        <a
+          href="https://docs.openzeppelin.com/upgrades-plugins/1.x/api-hardhat-upgrades"
+          >with hardhat</a
+        >. There are some catches of course (you can&#39;t for instance change
+        the storage layout), but we recommend to refer to the official
+        documentation to know the details.
+      </p>
+      <h2 id="incremental-decentralization">Incremental Decentralization</h2>
+      <p>
+        The ultimate vision of a Neokingdom DAOs is to be fully autonomous and
+        decentralized. In the ideal world, no one inside the DAO is a single
+        point of failure, everything that happens is triggered by all
+        contributors and executed by the smart contracts.
+      </p>
+      <p>
+        This though requires a very high level of automation. Postponing the
+        launch of the first DAO until that moment would have implied a very late
+        landing in the market and the risk of using plenty of resources before
+        we even knew whether what we are doing makes sense. Let&#39;s remember:
+        this is a first timer, there are many new ideas and some legal alchemy
+        that need to be validated.
+      </p>
+      <p>
+        We therefore decided to &quot;go live&quot; with the minimum necessary
+        level of decentralization (hence automation), where us developers have
+        still the right to operate some of the functions of the DAO (e.g.: the
+        minting of tokens).
+      </p>
+      <p>
+        Thanks to the upgradability of the smart contracts and the way we
+        engineered the resolutions (the core of the DAO machinery), we will be
+        able to slowly let go of these responsabilities.
+      </p>
+      <p>
+        More concretely, this bit of code in <code>Resolution.sol</code> is the
+        game changer:
+      </p>
+      <pre><code>  <span class="hljs-keyword">address[] </span>memory to = resolution.executionTo<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">bytes[] </span>memory data = resolution.executionData<span class="hljs-comment">;</span>
+
+  resolution.executionTimestamp = <span class="hljs-keyword">block.timestamp;
+</span>
+  for (uint256 i<span class="hljs-comment">; i &lt; to.length; i++) {</span>
+    (<span class="hljs-keyword">bool </span>success, ) = to[i].call(data[i])<span class="hljs-comment">;</span>
+    require(success, <span class="hljs-string">"Resolution: execution failed"</span>)<span class="hljs-comment">;</span>
+  }
+</code></pre>
+      <p>
+        Each resolution can optionally contain some execution data and the
+        contract that should execute it. Meaning that, in principle, each
+        resolution can come also with the code that fulfills it.
+      </p>
+      <p>
+        The possibility is there, but we are still not using it: the more we get
+        confident about the goodness of our process, the more we can automate.
+      </p>
+      <h2 id="next-steps">Next steps</h2>
+      <p>
+        The future of Neokingdom DAO far reaching, our vision is still at the
+        very early stages. Indeed now we need to make sure the DAO structure for
+        Teledisko is solid and expand the idea to other Neokingdoms.
+      </p>
+      <p>
+        Technically speaking, though, we are aiming at achieving almost full
+        decentralization by the next year. The next step in this direction is
+        the management of contributors&#39; tokens: currently, if a contributor
+        wants to sell a token within the DAO, the offer is automated, but the
+        match-making and consequent money transfer is manual.
+      </p>
+      <p>
+        For this reason, we need to be able to automatically deal with Euros or
+        Euro-equivalent cryptocurrencies within the smart contracts.
+      </p>
+      <p>
+        With
+        <a href="https://app.evmos.org/governance/56">EVMOS Proposal #56</a>, we
+        successfully registered EEUR inside the EVMOS ecosystem, hence laying
+        the foundation to integrate a Euro cryptocurrency in the DAO&#39;s
+        economy and to ultimately automate the financial processes of the
+        company.
+      </p>
+      <p>
+        We hope you liked the article and if you questions, feel free to jump
+        <a href="https://discord.com/invite/CvcTJWD4aS">into our discord</a>. We
+        are currently quite busy, but we would love to have you around :)
+      </p>
+    </section>
+  </body>
+</html>
